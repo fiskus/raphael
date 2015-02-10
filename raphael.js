@@ -6378,7 +6378,7 @@
         tuneText(o, params);
         node.style.visibility = vis;
     },
-    leading = 1.2,
+    leading = 1,
     tuneText = function (el, params) {
         if (el.type != "text" || !(params[has]("text") || params[has]("font") || params[has]("font-size") || params[has]("x") || params[has]("y"))) {
             return;
@@ -6414,7 +6414,7 @@
         el._.dirty = 1;
         var bb = el._getBBox(),
             dif = a.y - (bb.y + bb.height / 2);
-        dif && R.is(dif, "finite") && $(tspans[0], {dy: dif});
+        dif && R.is(dif, "finite") && $(tspans[0], {dy: 0});
     },
     getRealNode = function (node) {
         if (node.parentNode && node.parentNode.tagName.toLowerCase() === "a") {
